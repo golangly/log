@@ -1,4 +1,4 @@
-module github.com/bluebudgetz/gate
+module github.com/arikkfir/go-log
 
 go 1.13
 
