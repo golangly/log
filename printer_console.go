@@ -115,7 +115,7 @@ func prettyPrint(c Logger, msg string) {
 
 	// Print error
 	if c.err != nil {
-		_, _ = fmt.Fprintf(buf, "%+v", c.err)
+		_, _ = fmt.Fprintf(buf, "%+v\n", c.err)
 	}
 
 	// Write to output stream
