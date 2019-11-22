@@ -84,7 +84,7 @@ func prettyPrint(c Logger, msg string) {
 
 	// Print message
 	buf.WriteString(msg)
-	buf.WriteByte(' ')
+	buf.WriteString(" (")
 
 	// Print process & thread IDs
 	buf.WriteString(colorize(fmt.Sprintf(" pid=%d", pid), colorCyan, false))
@@ -92,7 +92,6 @@ func prettyPrint(c Logger, msg string) {
 
 	// Print context
 	if len(c.context) > 0 {
-		buf.WriteByte(' ')
 		for key, value := range c.context {
 			buf.WriteString(colorize(fmt.Sprintf(" %s=", key), colorCyan, false))
 			var stringValue string
@@ -111,7 +110,7 @@ func prettyPrint(c Logger, msg string) {
 			}
 		}
 	}
-	buf.WriteByte('\n')
+	buf.WriteString(")\n")
 
 	// Print error
 	if c.err != nil {
