@@ -3,7 +3,7 @@ module github.com/arikkfir/go-log
 go 1.13
 
 require (
-	github.com/arikkfir/errors v0.0.0-patch6
+	github.com/arikkfir/errors v0.0.1
 	github.com/huandu/go-tls v0.0.0-20190925082000-91fe9b1c23d1
 )
 
