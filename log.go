@@ -42,6 +42,7 @@ func init() {
 func Writer() io.Writer                        { return Root.Writer() }
 func With(key string, val interface{}) *Logger { return Root.With(key, val) }
 func WithErr(err error) *Logger                { return Root.WithErr(err) }
+func WithPanic(recovered interface{}) *Logger  { return Root.WithPanic(recovered) }
 func WithLevel(level Level) *Logger            { return Root.WithLevel(level) }
 func Trace(msg string)                         { Root.Trace(msg) }
 func Debug(msg string)                         { Root.Debug(msg) }

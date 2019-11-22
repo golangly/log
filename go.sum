@@ -1,2 +1,4 @@
+github.com/arikkfir/errors v0.0.0-patch6 h1:l1gVXXn7Bu9mRo73TNEuxRXABWPPugwcJAay/9aSChk=
+github.com/arikkfir/errors v0.0.0-patch6/go.mod h1:mrODOY8cBHM8meJ2DpdsorD8N/j/AePePaMCq6E/cYk=
 github.com/huandu/go-tls v0.0.0-20190925082000-91fe9b1c23d1 h1:j1LH6R+Ffcg0/GrDR76+VrGgOZmdMp0YmMVd3fg/bKg=
 github.com/huandu/go-tls v0.0.0-20190925082000-91fe9b1c23d1/go.mod h1:npOo0T8G0DF48sIJW2zElDFc3CiCiN08rO9PWMEHKSY=

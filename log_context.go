@@ -1,8 +1,11 @@
 package log
 
 import (
+	"fmt"
 	"io"
 	"os"
+
+	"github.com/arikkfir/errors"
 )
 
 type Logger struct {
@@ -36,12 +39,22 @@ func (c *Logger) With(key string, val interface{}) *Logger {
 }
 
 func (c *Logger) WithErr(err error) *Logger {
-	// TODO: adjust "skip" parameter to 'extractStacktrace(int,err)' call
 	nc := &Logger{context: make(map[string]interface{}, len(c.context)), err: err, level: c.level}
 	for k, v := range c.context {
 		nc.context[k] = v
 	}
 	return nc
+}
+
+func (c *Logger) WithPanic(recovered interface{}) *Logger {
+	var e errors.ErrorExt
+	if err, ok := recovered.(error); ok {
+		e = errors.Wrap(err, fmt.Sprintf("recovered panic: %v", recovered))
+	} else {
+		e = errors.New(fmt.Sprintf("recovered panic: %v", recovered))
+	}
+	e = e.AddTag("recovered", recovered)
+	return c.WithErr(e)
 }
 
 func (c *Logger) WithLevel(level Level) *Logger {
