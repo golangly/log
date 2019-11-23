@@ -1,4 +1,4 @@
-# go-log[![GoDoc](https://godoc.org/github.com/arikkfir/go-log?status.svg)](http://godoc.org/github.com/arikkfir/go-log) [![Report card](https://goreportcard.com/badge/github.com/arikkfir/go-log)](https://goreportcard.com/report/github.com/arikkfir/go-log) [![Sourcegraph](https://sourcegraph.com/github.com/arikkfir/go-log/-/badge.svg)](https://sourcegraph.com/github.com/arikkfir/go-log?badge)
+# go-log [![GoDoc](https://godoc.org/github.com/arikkfir/go-log?status.svg)](http://godoc.org/github.com/arikkfir/go-log) [![Report card](https://goreportcard.com/badge/github.com/arikkfir/go-log)](https://goreportcard.com/report/github.com/arikkfir/go-log) [![Sourcegraph](https://sourcegraph.com/github.com/arikkfir/go-log/-/badge.svg)](https://sourcegraph.com/github.com/arikkfir/go-log?badge)
 
 Go logging done right (well, you know...)
 
