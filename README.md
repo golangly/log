@@ -21,7 +21,7 @@ So far, so good - right? well that's basic usage identical to most other loggers
 * Accept recovered panic objects (via `recover()` in defer functions usually) and infer automatically whether they are errors or not, and treat them accordingly (it's still a panic, of course and treated as such also).
 * Automatic configuration from environment variables since you want to configure logging before everything else, including before command line parsing.
 * Only print to console. Use other tools to route logging to other places.
-* Supports [`go-errors`](github.com/arikkfir/go-errors) for error stack traces and error causes automatically.
+* Supports [`go-errors`](https://github.com/arikkfir/go-errors) for error stack traces and error causes automatically.
 * Super simple.
 
 ## Configuration
