@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/arikkfir/errors"
+	"github.com/arikkfir/go-errors"
 )
 
 type Logger struct {

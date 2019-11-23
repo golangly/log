@@ -9,8 +9,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/huandu/go-tls"
 )
 
 //noinspection GoUnusedConst
@@ -85,10 +83,7 @@ func prettyPrint(c Logger, msg string) {
 	// Print message
 	buf.WriteString(msg)
 	buf.WriteString(" (")
-
-	// Print process & thread IDs
 	buf.WriteString(colorize(fmt.Sprintf(" pid=%d", pid), colorCyan, false))
-	buf.WriteString(colorize(fmt.Sprintf(" tid=%d", tls.ID()), colorCyan, false))
 
 	// Print context
 	if len(c.context) > 0 {

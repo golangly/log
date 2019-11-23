@@ -8,8 +8,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/huandu/go-tls"
 )
 
 func jsonPrint(c Logger, msg string) {
@@ -51,7 +49,6 @@ func jsonPrint(c Logger, msg string) {
 
 	// Print process & thread IDs
 	o["pid"] = pid
-	o["tid"] = tls.ID()
 
 	// Print context
 	if len(c.context) > 0 {
