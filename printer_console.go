@@ -26,7 +26,7 @@ const (
 	colorDarkGray = 90
 )
 
-func prettyPrint(c Logger, msg string) {
+func PrettyPrinter(c Logger, msg string) {
 	needsQuote := func(s string) bool {
 		for i := range s {
 			if s[i] < 0x20 || s[i] > 0x7e || s[i] == ' ' || s[i] == '\\' || s[i] == '"' {

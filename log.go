@@ -33,9 +33,9 @@ func init() {
 	}
 	pretty := strings.ToLower(os.Getenv("LOG_PRETTY"))
 	if pretty == "1" || pretty == "yes" || pretty == "true" || pretty == "y" {
-		Printer = prettyPrint
+		Printer = PrettyPrinter
 	} else {
-		Printer = jsonPrint
+		Printer = JSONPrinter
 	}
 
 	switch strings.ToLower(os.Getenv("LOG_LEVEL")) {

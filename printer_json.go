@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func jsonPrint(c Logger, msg string) {
+func JSONPrinter(c Logger, msg string) {
 
 	// Create log entry map
 	o := map[string]interface{}{
