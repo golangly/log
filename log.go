@@ -37,6 +37,23 @@ func init() {
 	} else {
 		printer = jsonPrint
 	}
+
+	switch strings.ToLower(os.Getenv("LOG_LEVEL")) {
+	case "disabled", "panic", "fatal":
+		Root = Root.WithLevel(LevelDisabled)
+	case "error":
+		Root = Root.WithLevel(LevelError)
+	case "warn":
+		Root = Root.WithLevel(LevelWarn)
+	case "info", "":
+		Root = Root.WithLevel(LevelInfo)
+	case "debug":
+		Root = Root.WithLevel(LevelDebug)
+	case "trace":
+		Root = Root.WithLevel(LevelTrace)
+	default:
+		Fatal("log level must be one of: disabled, panic, fatal, error, warn, info, debug or trace (case-insensitive)")
+	}
 }
 
 func Writer() io.Writer                        { return Root.Writer() }

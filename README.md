@@ -26,7 +26,11 @@ So far, so good - right? well that's basic usage identical to most other loggers
 
 ## Configuration
 
-Use `LOG_PRETTY` with values of `1`, `y`, `yes`, `true` (case insensitively) to pretty print (by default `JSON` logging is used).
+All environment variable names & values are case insensitive.
+
+Set `LOG_PRETTY` to `1`, `y`, `yes` or `true` to enable pretty print (by default `JSON` logging is used).
+
+Set `LOG_LEVEL` to `disabled`, `panic` or `fatal` to disable logging (except panics & fatal events), or to `error`, `warn`, `info`, `debug` or `trace` to set the log level accordingly.
   
 ## Contributing
 
