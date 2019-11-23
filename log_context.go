@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/arikkfir/go-errors"
+	"github.com/golangly/errors"
 )
 
 type Logger struct {
