@@ -1,2 +1,2 @@
-github.com/arikkfir/go-errors v0.0.2 h1:oJqwQKgjJYuLT98sFC2yIGOH78aTBZUc3FkZz3fXbX8=
-github.com/arikkfir/go-errors v0.0.2/go.mod h1:GbjiBqJTY52Lwmk0RX/uAp+gunwSNG20ZiBAVwRyVqQ=
+github.com/golangly/errors v0.0.1 h1:FtPbgDPbQGiLJauwBO5kF0c3nCrs7HB71uriNSDva0U=
+github.com/golangly/errors v0.0.1/go.mod h1:svcoXbOmwn3SAYqJ2HTPFB1ZUXzzV6x9X3MGqUsXUd8=
