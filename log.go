@@ -21,7 +21,7 @@ const (
 
 var (
 	Root    = &Logger{context: make(map[string]interface{}, 0), level: LevelInfo}
-	printer func(c Logger, msg string)
+	Printer func(c Logger, msg string)
 	bufPool = sync.Pool{New: func() interface{} { return bytes.NewBuffer(make([]byte, 0, 100)) }}
 	pid     = os.Getpid()
 	cwd     string
@@ -33,9 +33,9 @@ func init() {
 	}
 	pretty := strings.ToLower(os.Getenv("LOG_PRETTY"))
 	if pretty == "1" || pretty == "yes" || pretty == "true" || pretty == "y" {
-		printer = prettyPrint
+		Printer = prettyPrint
 	} else {
-		printer = jsonPrint
+		Printer = jsonPrint
 	}
 
 	switch strings.ToLower(os.Getenv("LOG_LEVEL")) {

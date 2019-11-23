@@ -95,4 +95,4 @@ func (c *Logger) Panic(msg string) { c.print(msg); panic(c) }
 
 func (c *Logger) Fatal(msg string) { c.print(msg); os.Exit(1) }
 
-func (c *Logger) print(msg string) { printer(*c, msg) }
+func (c *Logger) print(msg string) { Printer(*c, msg) }
