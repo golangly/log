@@ -109,7 +109,7 @@ func PrettyPrinter(c Logger, msg string) {
 
 	// Print error
 	if c.err != nil {
-		_, _ = fmt.Fprintf(buf, "%+v\n", c.err)
+		_, _ = fmt.Fprintf(buf, "%+.2v\n", c.err)
 	}
 
 	// Write to output stream
