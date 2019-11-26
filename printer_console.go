@@ -26,21 +26,14 @@ const (
 	colorDarkGray = 90
 )
 
+func colorize(s interface{}, c int, disabled bool) string {
+	if disabled {
+		return fmt.Sprintf("%s", s)
+	}
+	return fmt.Sprintf("\x1b[%dm%v\x1b[0m", c, s)
+}
+
 func PrettyPrinter(c Logger, msg string) {
-	needsQuote := func(s string) bool {
-		for i := range s {
-			if s[i] < 0x20 || s[i] > 0x7e || s[i] == ' ' || s[i] == '\\' || s[i] == '"' {
-				return true
-			}
-		}
-		return false
-	}
-	colorize := func(s interface{}, c int, disabled bool) string {
-		if disabled {
-			return fmt.Sprintf("%s", s)
-		}
-		return fmt.Sprintf("\x1b[%dm%v\x1b[0m", c, s)
-	}
 
 	// Checking a buffer from the pool
 	var buf = bufPool.Get().(*bytes.Buffer)
@@ -83,7 +76,7 @@ func PrettyPrinter(c Logger, msg string) {
 	// Print message
 	buf.WriteString(msg)
 	buf.WriteString(" (")
-	buf.WriteString(colorize(fmt.Sprintf(" pid=%d", pid), colorCyan, false))
+	buf.WriteString(colorize(fmt.Sprintf("pid=%d", pid), colorCyan, false))
 
 	// Print context
 	if len(c.context) > 0 {
@@ -98,11 +91,7 @@ func PrettyPrinter(c Logger, msg string) {
 					stringValue = string(b)
 				}
 			}
-			if needsQuote(stringValue) {
-				buf.WriteString(strconv.Quote(stringValue))
-			} else {
-				buf.WriteString(stringValue)
-			}
+			buf.WriteString(stringValue)
 		}
 	}
 	buf.WriteString(")\n")
