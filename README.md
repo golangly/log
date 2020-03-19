@@ -16,7 +16,7 @@ log.Panic("Hello!")
 log.Fatal("Hello!")
 ```
 
-So far, so good - right? well that's basic usage identical to most other loggers. In factm, this logging implementation is probably even a bit slower than loggers such as zerolog or ruslog. There are, however, a few extra features that make this library both opinionated and more compatible to my view of logging:
+So far, so good - right? well that's basic usage identical to most other loggers. In fact, this logging implementation is probably even a bit slower than loggers such as zerolog or ruslog. There are, however, a few extra features that make this library both opinionated and more compatible to my view of logging:
 
 * Accept recovered panic objects (via `recover()` in defer functions usually) and infer automatically whether they are errors or not, and treat them accordingly (it's still a panic, of course and treated as such also).
 * Automatic configuration from environment variables since you want to configure logging before everything else, including before command line parsing.
