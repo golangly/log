@@ -98,6 +98,7 @@ func PrettyPrinter(c Logger, msg string) {
 
 	// Print error
 	if c.err != nil {
+		// TODO: only use '%+.2v' on golangly errors; use '%v' otherwise
 		_, _ = fmt.Fprintf(buf, "%+.2v\n", c.err)
 	}
 
